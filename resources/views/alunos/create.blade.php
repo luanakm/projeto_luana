@@ -1,6 +1,6 @@
 <body>
     <div class="container">
-        <h1>Novo Aluno</h1>
+        <h1>Novo Aluno </h1>
         <form action="{{ route('alunos.store') }}" method="POST">
             <!-- Token CSRF para proteção contra ataques CSRF -->
             @csrf
