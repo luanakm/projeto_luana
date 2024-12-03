@@ -19,9 +19,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/novoAluno', function() {
-        return view('alunos.create');
-})->name("novoAluno");
+Route::get('/novoAluno', [AlunoController::class, 'create'])->name('novoAluno');
+
 
 Route::get('/novaDisciplina', function() {
         return view('disciplinas.create');
