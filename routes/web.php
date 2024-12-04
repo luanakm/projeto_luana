@@ -20,11 +20,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/novoAluno', [AlunoController::class, 'create'])->name('novoAluno');
-
-
-Route::get('/novaDisciplina', function() {
-        return view('disciplinas.create');
-})->name("novaDisciplina");
+Route::get('/novaDisciplina', [DisciplinasController::class, 'create'])->name('novaDisciplina');
 
 Route::resource('disciplinas', DisciplinasController::class);
 Route::resource('alunos', AlunoController::class);

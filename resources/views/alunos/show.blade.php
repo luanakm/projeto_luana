@@ -1,4 +1,5 @@
-<x-app-layout>
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <style>
         body {
@@ -69,8 +70,12 @@
                 <span class="label">Curso:</span>
                 <span class="info">{{ $aluno->curso }}</span>
             </div>
+            <div class="meta">
+                <span class="label">Disciplina:</span>
+                <span class="info">{{ $aluno->disciplina ? $aluno->disciplina->nome : 'Não atribuída' }}</span>
+            </div>
         </div>
         <a href="{{ route('alunos.index') }}" class="btn-return">Voltar</a>
     </section>
 </body>
-</x-app-layout>
+</html>

@@ -75,6 +75,7 @@
                     <th>Nome</th>
                     <th>Data de Nascimento</th>
                     <th>Curso</th>
+                    <th>Disciplina</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -85,6 +86,7 @@
                         <td>{{ $aluno->nome }}</td>
                         <td>{{ $aluno->data_de_nascimento }}</td>
                         <td>{{ $aluno->curso }}</td>
+                        <td>{{ $aluno->disciplina->nome }}</td>
                         <td>
                             <a href="{{ route('alunos.show', $aluno->id) }}" class="btn btn-info">Detalhes</a>
                             <a href="{{ route('alunos.edit', $aluno->id) }}" class="btn btn-warning">Editar</a>

@@ -46,14 +46,15 @@ class AlunoController extends Controller
      */
     public function show(string $id)
     {
-        $aluno = Aluno::findOrFail($id);
+        $aluno = Aluno::with('disciplina')->findOrFail($id);
         return view('alunos.show', compact('aluno'));
     }
 
     public function edit(string $id)
     {
         $aluno = Aluno::findOrFail($id);
-        return view('alunos.edit', compact('aluno'));
+        $disciplinas = Disciplina::all();
+        return view('alunos.edit', compact('aluno', 'disciplinas'));
     }
 
     /**
@@ -65,6 +66,7 @@ class AlunoController extends Controller
         $aluno->nome = $request->input('nome');
         $aluno->data_de_nascimento = $request->input('data_de_nascimento');
         $aluno->curso = $request->input('curso');
+        $aluno->disciplina_id = $request->input('disciplina_id');
 
         $aluno->save();
 
